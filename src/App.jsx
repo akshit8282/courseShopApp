@@ -26,7 +26,7 @@ function App() {
         <Route path="/post/:id">
           <Single />
         </Route>
-        <Route path="/history">{currentUser ? <Write /> : <Login />}</Route>
+        <Route path="/history">{ <Write />}</Route>
         <Route path="/settings">
           {currentUser ? <Settings /> : <Login />}
         </Route>
