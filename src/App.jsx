@@ -5,6 +5,7 @@ import Register from "./pages/register/Register";
 import Settings from "./pages/settings/Settings";
 import Single from "./pages/single/Single";
 import Write from "./pages/write/Write";
+import Logout from './pages/logout/logout'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
@@ -28,7 +29,10 @@ function App() {
         </Route>
         <Route path="/history">{ <Write />}</Route>
         <Route path="/settings">
-          {currentUser ? <Settings /> : <Login />}
+          { <Settings />}
+        </Route>
+        <Route path="/logout">
+          <Logout/>
         </Route>
       </Switch>
     </Router>

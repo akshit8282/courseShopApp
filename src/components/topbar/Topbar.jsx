@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import "./topbar.css";
+import Logout from '../../pages/logout/logout'
 
 export default function Topbar() {
   const user = false;
@@ -24,11 +25,12 @@ export default function Topbar() {
               HISTORY
             </Link>
           </li>
-          {user && <li className="topListItem">LOGOUT</li>}
+          <li data-toggle="modal" data-target=".bs-example-modal-sm" className="topListItem"><Link className="link" to="/logout">LOGOUT</Link></li>
+         
         </ul>
       </div>
       <div className="topRight">
-        {user ? (
+        
           <Link className="link" to="/settings">
             <img
               className="topImg"
@@ -36,7 +38,7 @@ export default function Topbar() {
               alt=""
             />
           </Link>
-        ) : (
+      
           <ul className="topList">
             <li className="topListItem">
               <Link className="link" to="/login">
@@ -49,9 +51,10 @@ export default function Topbar() {
               </Link>
             </li>
           </ul>
-        )}
+        
         <i className="topSearchIcon fas fa-search"></i>
       </div>
+      
     </div>
   );
 }
